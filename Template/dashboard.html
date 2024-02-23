@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h2>Dashboard</h2>
+
+<!-- Display students -->
+<h3>Students</h3>
+<ul>
+    {% for student in students %}
+    <li>{{ student.first_name }} {{ student.last_name }}</li>
+    {% endfor %}
+</ul>
+
+<!-- Display courses -->
+<h3>Courses</h3>
+<ul>
+    {% for course in courses %}
+    <li>{{ course.name }} - {{ course.instructor }}</li>
+    {% endfor %}
+</ul>
+
+<!-- Display assignments -->
+<h3>Assignments</h3>
+<ul>
+    {% for assignment in assignments %}
+    <li>{{ assignment.title }} - {{ assignment.course.name }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
